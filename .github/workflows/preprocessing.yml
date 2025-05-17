@@ -21,7 +21,7 @@ jobs:
             
             - name: Run Preprocessing
               run: |
-                    python automate_MohamadBaskoroAji.py \
+                    python preprocessing/automate_MohamadBaskoroAji.py \
                     --input  Supplement_Sales_Weekly_Expanded.csv \
                     --output preprocessing/supplement_sales_preprocessed
             - name: Debugging
