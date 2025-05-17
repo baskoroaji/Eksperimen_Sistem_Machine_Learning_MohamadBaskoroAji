@@ -9,9 +9,9 @@ jobs:
     preprocessing:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v4
 
-            - uses: actions/setup-python@v2
+            - uses: actions/setup-python@v4
               with:
                 python-version: 3.12.7
             
@@ -28,7 +28,7 @@ jobs:
               run: |
                     ls -R preprocessing/supplement_sales_preprocessed/
             - name: Commit files
-              uses: action/checkout@v2
+              uses: action/checkout@v4
               with:
                 name: supplement-sales-preporcessed
                 path: preprocessing/supplement_sales_preprocessed/
