@@ -1,0 +1,38 @@
+name: Preprocessing Supplemen Sales Dataset
+
+on:
+    push:
+        branches: [ main ]
+    workflow_dispatch:
+
+jobs:
+    preprocessing:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - uses: actions/setup-python@v2
+              with:
+                python-version: 3.12.7
+            
+            - name: Install dependencies
+              run: |
+                    pip install pandas scikit-learn numpy
+            
+            - name: Run Preprocessing
+              run: |
+                    python automate_MohamadBaskoroAji.py \
+                    --input  Suplemen_Sales_Dataset.csv \
+                    --output preprocessing/supplement_sales_preprocessed
+            - name: Debugging
+              run: |
+                    ls -R preprocessing/supplement_sales_preprocessed/
+            - name: Commit files
+              uses: action/checkout@v2
+              with:
+                name: supplement-sales-preporcessed
+                path: preprocessing/supplement_sales_preprocessed/
+                
+
+                
+            
