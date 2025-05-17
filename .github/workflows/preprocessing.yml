@@ -28,7 +28,7 @@ jobs:
               run: |
                     ls -R preprocessing/supplement_sales_preprocessed/
             - name: Commit files
-              uses: action/checkout@v4
+              uses: actions/upload-artifact@v4
               with:
                 name: supplement-sales-preporcessed
                 path: preprocessing/supplement_sales_preprocessed/
